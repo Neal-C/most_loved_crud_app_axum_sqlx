@@ -2,6 +2,7 @@
 ##! Change the Rust version to the lastest !
 ## ! cargo build in release mode ! for much better performance
 ## ! Change app-name 'template-rust' to yours
+## sudo docker run --name axum_sqlx -p 3000:3000 --detach most_loved_crud_app
 
 # Leveraging the pre-built Docker images with
 # cargo-chef and the Rust toolchain

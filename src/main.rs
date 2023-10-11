@@ -17,5 +17,5 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 
 async fn heartbeat() -> http::StatusCode {
-    http::StatusCode::OK
+    http::StatusCode::ACCEPTED
 }
