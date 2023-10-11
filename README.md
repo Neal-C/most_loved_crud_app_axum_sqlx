@@ -3,3 +3,9 @@
 ## I AM NOT THE AUTHOR OF THIS CODE;
 
 ## code may have been copied as such or received my personal modifications.
+
+### Tech stack
+
+- Rust
+- PostgreSQL
+- Docker
