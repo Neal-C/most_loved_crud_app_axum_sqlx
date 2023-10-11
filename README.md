@@ -9,3 +9,4 @@
 - Rust
 - PostgreSQL
 - Docker
+- Detailed stack in cargo.toml
