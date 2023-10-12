@@ -2,7 +2,7 @@
 
 mod handlers;
 
-use axum::routing::{get, Router};
+use axum::routing::{get, post, Router};
 use sqlx::postgres::PgPoolOptions;
 
 const MAX_PG_CONNECTIONS: u32 = 5;
@@ -23,6 +23,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let app = Router::new()
         .route("/", get(handlers::heartbeat))
+        .route("/quotes", post(handlers::create_quote))
         .with_state(pool);
 
     axum::Server::bind(&address.parse().unwrap())
