@@ -2,7 +2,8 @@
 ##! Change the Rust version to the lastest !
 ## ! cargo build in release mode ! for much better performance
 ## ! Change app-name 'template-rust' to yours
-## sudo docker run --name axum_sqlx -p 3000:3000 --detach most_loved_crud_app
+## docker build --tag axum-sqlx:v1 .
+## docker run --name axum-sqlx -p 3000:3000 --detach axum-sqlx:v1
 
 # Leveraging the pre-built Docker images with
 # cargo-chef and the Rust toolchain
@@ -16,7 +17,7 @@ RUN cargo chef prepare --recipe-path recipe.json
 FROM chef AS builder
 COPY --from=planner /app/recipe.json recipe.json
 # Build dependencies - this is the caching Docker layer!
-RUN cargo chef cook --recipe-path recipe.json
+RUN cargo chef cook --release --recipe-path recipe.json
 
 COPY . .
 RUN cargo build --release
