@@ -6,7 +6,7 @@
 
 ### Tech stack
 
-- Rust
+- Rust (sqlx, axum, uuid, chrono)
 - PostgreSQL
 - Docker
 - Detailed stack in cargo.toml
