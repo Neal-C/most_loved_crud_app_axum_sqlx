@@ -25,7 +25,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .route("/", get(handlers::heartbeat))
         .route("/quotes", post(handlers::create_quote))
         .route("/quotes", get(handlers::read_quotes))
-        .route("/quotes", patch(handlers::update_quote))
+        .route("/quotes/:id", patch(handlers::update_quote))
         .with_state(pool);
 
     axum::Server::bind(&address.parse().unwrap())
