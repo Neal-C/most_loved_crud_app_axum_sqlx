@@ -1,3 +1,5 @@
+#![allow(clippy::needless_return)]
+
 mod handlers;
 
 use axum::routing::{get, Router};
