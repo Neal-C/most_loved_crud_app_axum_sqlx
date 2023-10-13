@@ -13,6 +13,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let address: String = format!("0.0.0.0:{port}");
 
+    // docker run --name db-axum-sqlx -p 5555:5432 -e POSTGRES_PASSWORD=<yourPW> --detach postgres
     let database_url: String =
         std::env::var("DATABASE_URL").expect("Missing DATABASE_URL environment variable");
 
