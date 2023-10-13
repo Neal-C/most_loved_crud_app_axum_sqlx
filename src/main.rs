@@ -26,7 +26,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .route("/", get(handlers::heartbeat))
         .route("/quote", post(handlers::create_quote))
         .route("/quote", get(handlers::read_quotes))
-        .route("/quote/:id", patch(handlers::update_quote))
+        .route("/quote", patch(handlers::update_quote))
         .route("/quote", delete(handlers::delete_quote))
         .with_state(pool);
 
