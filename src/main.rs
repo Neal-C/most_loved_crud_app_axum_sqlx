@@ -3,12 +3,17 @@
 mod handlers;
 
 use axum::routing::{delete, get, patch, post, Router};
+use dotenv::dotenv;
 use sqlx::postgres::PgPoolOptions;
 
 const MAX_PG_CONNECTIONS: u32 = 5;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    if std::env::var("ENV").is_err() {
+        // No file on prod
+        dotenv().ok();
+    }
     let port: String = std::env::var("PORT").unwrap_or_else(|_| String::from("3000"));
 
     let address: String = format!("0.0.0.0:{port}");
