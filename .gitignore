@@ -3,3 +3,5 @@
 .env.development
 .env.development.database
 .env.*
+docker-compose.*
+docker-compose.yaml
